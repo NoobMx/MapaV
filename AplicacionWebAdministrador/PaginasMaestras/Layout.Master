@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="AplicacionWebAdministrador.PaginasMaestras.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Administrador</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/css/EstiloLayouts.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a3c9717c3d.js" crossorigin="anonymous"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <div class="Desplegar-Aside">
+        <span><i class="fa-solid fa-chevron-right"></i></span>
+    </div>
+    <aside class="Aside-Content">
+        <div class="Nombre-Administrador">
+            <span><i class="fa-solid fa-user"></i></span>
+            <div class="Nombre-Area">
+                <h1>Rodrigo</h1>
+                <h3>Rodriguez Díaz</h3>
+            </div>
+            <hr/>  
+        </div>
+        <div class="Opciones-Content">
+            <div class="Opciones-Tittle">
+                <h2>Opciones</h2>
+            </div>
+            <a href="../PedidosMapas.aspx" class="Option-Area">
+                <span><i class="fa-solid fa-truck-fast Icons"></i></span>
+                <div class="Text-Option">
+                    <p>Pedidos</p>
+                </div>
+            </a>
+            <a href="../RegistrarRepartidor.aspx" class="Option-Area">
+                <span><i class="fa-solid fa-user-plus Icons"></i></span>
+                <div class="Text-Option">
+                    <p>Registrar</p> 
+                    <p>Repartidores</p>
+                </div>
+            </a>
+            <a href="../Productos.aspx" class="Option-Area">
+                <span><i class="fa-solid fa-cart-arrow-down Icons"></i></span>
+                <div class="Text-Option">
+                    <p>Productos</p>
+                </div>
+            </a>
+            <a href="../ListaRepartidores.aspx" class="Option-Area">
+                <span><i class="fa-solid fa-motorcycle Icons"></i></span>
+                <div class="Text-Option">
+                    <p>Repartidores</p>
+                </div>
+            </a>
+            <a href="../Usuarios.aspx" class="Option-Area"> 
+                <span><i class="fa-solid fa-users Icons"></i></span>
+                <div class="Text-Option">
+                    <p>Usuarios</p>
+                </div>
+            </a>
+        </div>
+        <div class="Logout-Content">
+            <hr/>
+            <div class="Logout-Area">
+                <span><i class="fa-solid fa-right-from-bracket"></i></span>
+                <div>
+                    <h3>Cerrar Sesión</h3>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section class="Content-Section">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+    </section>
+    <script src="../Dom/Previsualizacion.js"></script>
+    <script src="../Dom/Aside.js"></script>
+</body>
+</html>

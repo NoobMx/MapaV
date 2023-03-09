@@ -1,0 +1,215 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    background-color: #cddbe9;
+}
+
+body {
+    background-image: url(../images/layered-waves-haikeiRU.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: inherit;
+    display: grid;
+    height: 100vh;
+    place-content: center;
+}
+
+.grid-Section {
+    display: grid;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    grid-template:
+        "Tittle"
+        "Inputs";
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    gap: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.Section-Tittle{
+    display: grid;
+    width: 100%;
+    text-align: center;
+    gap: 20px;
+
+}
+
+.fa-truck {
+    font-size: 6em;
+    color: #ff9806;
+    filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.25));
+}
+
+.numbers-Containers {
+    display: flex;
+}
+
+form {
+    grid-area: Inputs;
+    display: grid;
+    gap: 20px;
+}
+
+.Area-Input_Nombre, .Area-Input_Edad, .Area-Input_Telefono, .Area-Input_Direction {
+    display: grid;
+    grid-template:
+        "Tittles Tittles"
+        "Icon Input";
+    align-items: center;
+}
+
+.Area-Input_password {
+    display: grid;
+    grid-template:
+        "Tittles Tittles Tittles"
+        "Icon Input Eye";
+    align-items: center;
+}
+
+.Tittles {
+    grid-area: Tittles;
+    margin-bottom: 7px;
+    font-size: .9em;
+}
+
+.Icons {
+    grid-area: Icon;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ff9806;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+    padding: 10px;
+    padding-left: 13px;
+}
+
+.numbers-Containers{
+    display: flex;
+    gap: 10px;
+}
+
+.Nombre-Input, .Edad-Input, .Telefono-Input, .Direccion-Input {
+    grid-area: Input;
+    height: 40px;
+    width: 256.5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid #ff9806;
+    padding: 10px;
+    transition: .2s;
+    outline: none;
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield !important;
+    margin: 0;
+    -moz-appearance: textfield !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.Edad-Input {
+    width: 70px;
+}
+
+.Telefono-Input {
+    width: 136.5px;
+}
+
+.Nombre-Input:hover{
+
+}
+
+.input-Password {
+    width: 216.5px;
+    grid-area: Input;
+    height: 40px;
+    border: 1px solid #ff9806;
+    padding: 10px;
+    transition: .2s;
+    outline: none;
+}
+
+.input-Password:hover, .Nombre-Input:hover, .Edad-Input:hover, .Telefono-Input:hover, .Direccion-Input:hover {
+    border: 1px solid #ff6961;
+}
+
+.Edad-Input:invalid{
+    border: 2px solid red;
+    animation: shake 0.2s 2;
+}
+
+.input-Password:focus, .Nombre-Input:focus, .Edad-Input:focus, .Telefono-Input:focus, .Direccion-Input:focus {
+    border: 1px solid #ff6961;
+}
+
+
+.input-Password:focus {
+    border: 1px solid #ff6961;
+}
+
+.input-Password:focus, .input-Text:focus {
+    border: 1px solid #ff6961;
+}
+
+.eye {
+    grid-area: Eye;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ff9806;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: none;
+    cursor: pointer;
+    padding: 10px;
+    padding-right: 13px;
+}
+
+.Area-Input_Button .button {
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ff9806;
+    transition: .3s;
+}
+
+.Area-Input_Button .button:hover {
+    background-color: #ff6961;
+    color: #ffff;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.40);
+}
+
+@keyframes shake {
+    25% {
+        translate: 6px 0;
+    }
+    50% {
+        translate: -6px 0;
+    }
+    75%{
+        translate: 6px 0;
+    }
+}
