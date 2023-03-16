@@ -44,50 +44,48 @@ function initMap() {
 function abrirModal() {
     var modal = document.getElementById("myModal");
     modal.style.display = "block";
-    fetch("/Pedidos/mostrarRepartidor")
-        .then(response => response.json())
-        .then(data => {
-            var repartidores = data;
-            var listBox = document.getElementById("myListBox");
-
-            repartidores.forEach(function (repartidor) {
-                // Crear un nuevo elemento de opción
-                var option = document.createElement("option");
-                option.text = repartidor.Nombre;
-                option.value = repartidor.ID;
-
-                // Agregar el nuevo elemento al ListBox
-                listBox.add(option);
-            });
-        });
 }
 
 function asignarRepartidor() {
     const myListBox = document.getElementById("myListBox");
-    var selectedOption = myListBox.options[myListBox.selectedIndex];
-    var pedido = {
-        ID: pedidoID,
-        RepartidorID: selectedOption.value,
-    }
-    const url = "/Pedidos/AsignarRepartidor";
-    const options = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(pedido),
-    };
-    fetch(url, options)
-        .then(response => response.json())
-        .then(data => {
-            if (Boolean(data)) // Convert the response to a boolean value
-            {
-                alert("Repartidor Asignado");
-                cerrarModal();
-                location.reload();
+    var btnEnviar = document.getElementById("enviarRepartidor");
 
-            }
-        });
+    btnEnviar.addEventListener("click", function () {
+        var selectedOption = myListBox.options[myListBox.selectedIndex];
+        var pedido = {
+            ID: pedidoID,
+            RepartidorID: selectedOption.value,
+        }
+        const url = "/Pedidos/AsignarRepartidor";
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(pedido),
+        };
+
+        // Validar que se haya seleccionado una opción antes de enviar los datos
+        if (selectedOption.value === "") {
+            // Si no se ha seleccionado una opción, mostrar una alerta y no enviar nada
+            alert("Por favor, seleccione una opción.");
+            return false;
+        } else {
+            // Si se ha seleccionado una opción, enviar los datos
+            fetch(url, options)
+                .then(response => response.json())
+                .then(data => {
+                    if (Boolean(data)) // Convert the response to a boolean value
+                    {
+                        alert("Repartidor Asignado");
+                        cerrarModal();
+                        location.reload();
+
+                    }
+                    return true;
+                });
+        }
+    });
 }
 
 //Función para cerrar el modal
@@ -109,6 +107,21 @@ window.onclick = function (event) {
 marcadores();
 
 function marcadores() {
+    fetch("/Pedidos/mostrarRepartidor")
+        .then(response => response.json())
+        .then(data => {
+            var repartidores = data;
+            var listBox = document.getElementById("myListBox");
+            repartidores.forEach(function (repartidor) {
+                // Crear un nuevo elemento de opción
+                var option = document.createElement("option");
+                option.text = repartidor.Nombre;
+                option.value = repartidor.ID;
+                // Agregar el nuevo elemento al ListBox
+                listBox.add(option);
+            });
+            
+        });
     //Petición para la BD que retorna un JSON con los registros....
     fetch("/Pedidos/MostrarPedido")
         .then(response => response.json())
@@ -148,7 +161,7 @@ function marcadores() {
                     //icon: "images/marcador/32.png",
                     animation: google.maps.Animation.DROP,
                     label: pedido.PedidoID.toString(),
-                    labelColor: '#FF0000',
+                    //labelColor: '#FF0000',
                     //label: etiquetas[etiquetaIndice++ % etiquetas.length],
                     id: pedido.PedidoID,
                 });

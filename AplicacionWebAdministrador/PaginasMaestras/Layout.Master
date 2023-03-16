@@ -13,7 +13,6 @@
     <script src="https://kit.fontawesome.com/a3c9717c3d.js" crossorigin="anonymous"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
 </head>
 <body>
     <div class="Desplegar-Aside">
@@ -21,10 +20,9 @@
     </div>
     <aside class="Aside-Content">
         <div class="Nombre-Administrador">
-            <span><i class="fa-solid fa-user"></i></span>
+            <span class="span"><i class="fa-solid fa-user"></i></span>
             <div class="Nombre-Area">
-                <h1>Rodrigo</h1>
-                <h3>Rodriguez Díaz</h3>
+                <asp:Label ID="NombreAdministrador" runat="server" class="label"></asp:Label>
             </div>
             <hr/>  
         </div>
@@ -38,11 +36,10 @@
                     <p>Pedidos</p>
                 </div>
             </a>
-            <a href="../RegistrarRepartidor.aspx" class="Option-Area">
-                <span><i class="fa-solid fa-user-plus Icons"></i></span>
+            <a href="../HistorialPedidos.aspx" class="Option-Area">
+                <span><i class="fa-solid fa-timeline Icons"></i></span>
                 <div class="Text-Option">
-                    <p>Registrar</p> 
-                    <p>Repartidores</p>
+                    <p>Historial de Pedidos</p>
                 </div>
             </a>
             <a href="../Productos.aspx" class="Option-Area">
@@ -57,21 +54,34 @@
                     <p>Repartidores</p>
                 </div>
             </a>
+            <a href="../RegistrarRepartidor.aspx" class="Option-Area">
+                <span><i class="fa-solid fa-user-plus Icons"></i></span>
+                <div class="Text-Option">
+                    <p>Registrar</p> 
+                    <p>Repartidores</p>
+                </div>
+            </a>
             <a href="../Usuarios.aspx" class="Option-Area"> 
                 <span><i class="fa-solid fa-users Icons"></i></span>
                 <div class="Text-Option">
-                    <p>Usuarios</p>
+                    <p>Clientes</p>
                 </div>
             </a>
+            <a href="../AsignarHoras.aspx" class="Option-Area"> 
+                <span><i class="fa-solid fa-clock Icons"></i></span>
+                <div class="Text-Option">
+                    <p>Horarios</p>
+                </div>
+            </a>    
         </div>
         <div class="Logout-Content">
             <hr/>
-            <div class="Logout-Area">
+            <a class="CerrarsesionRedireccion Logout-Area" href="../CerrarSesion.aspx" >
                 <span><i class="fa-solid fa-right-from-bracket"></i></span>
                 <div>
                     <h3>Cerrar Sesión</h3>
                 </div>
-            </div>
+            </a>
         </div>
     </aside>
     <section class="Content-Section">
@@ -79,7 +89,6 @@
 
             </asp:ContentPlaceHolder>
     </section>
-    <script src="../Dom/Previsualizacion.js"></script>
     <script src="../Dom/Aside.js"></script>
 </body>
 </html>

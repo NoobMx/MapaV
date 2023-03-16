@@ -1,5 +1,10 @@
-﻿using System;
+﻿using AplicacionWebAdministrador.Models;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,10 +16,33 @@ namespace AplicacionWebAdministrador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //foreach ()
-            //{
+            if (Session["nombreUsuario"] == null || Session["contraseña"] == null)
+            {
+                Response.Redirect("~/InicioSesión.aspx");
+            }
+            else
+            {
+                Producto productoO = new Producto();
+                var listaproductos = JsonConvert.DeserializeObject<List<Producto>>(productoO.MostrarProductos());
+                ObservableCollection<ProductosDTO> productosDTO = new ObservableCollection<ProductosDTO>();
+                listaproductos.ForEach(p =>
+                {
+                    productosDTO.Add(new ProductosDTO
+                    {
+                        ID = p.ID,
+                        Nombre = p.Nombre,
+                        Foto = p.Foto
+                    });
+                });
+                NumeroProductos.Text = productosDTO.Count.ToString();
+                rptProductos.DataSource = productosDTO;
+                rptProductos.DataBind();
+            }
+        }
 
-            //}
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,7 +30,7 @@ body {
     background-color: var(--Rojo);
     position: fixed;
     left: 0;
-    top: 120px;
+    top: 110px;
     font-size: 1.6em;
     width: 30px;
     padding: 5px;
@@ -62,7 +62,7 @@ body {
 
 .Desplazar {
     left: 240px;
-    top: 45px;
+    top: 120px;
     transform: rotate(180deg);
 }
 
@@ -84,17 +84,17 @@ body {
     gap: 10px;
 }
 
-    .Nombre-Administrador span {
-        grid-area: Icon;
-        background-color: black;
-        padding: 10px;
-        border-radius: 50vh;
-        color: #ffff;
-        width: 48px;
-        height: 48px;
-        display: flex;
-        justify-content: center;
-    }
+.Nombre-Administrador .span {
+    grid-area: Icon;
+    background-color: black;
+    padding: 10px;
+    border-radius: 50vh;
+    color: #ffff;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+}
 
 .fa-user {
     font-size: 2em;
@@ -104,14 +104,15 @@ body {
     grid-area: Nombre;
 }
 
-    .Nombre-Area h1 {
-        font-size: 2.3em;
-    }
+.Nombre-Area .label {
+    font-size: 1.6em;
+    font-weight: 500;
+}
 
-    .Nombre-Area h3 {
-        color: #8E8E8E;
-        font-size: 1em;
-    }
+.Nombre-Area h3 {
+    color: #8E8E8E;
+    font-size: 1em;
+}
 
 .Nombre-Administrador hr {
     grid-area: espacio;
@@ -137,19 +138,20 @@ body {
     transition: .3s;
 }
 
-    .Option-Area:hover {
-        background-color: #E1E1E1;
-        border-radius: 10px;
-    }
+.Option-Area:hover {
+    background-color: #E1E1E1;
+    border-radius: 10px;
+}
 
-    .Option-Area span {
-        width: 20%;
-    }
+.Option-Area span {
+    width: 20%;
+}
 
 .Text-Option {
     width: 80%;
     font-size: 1.3em;
     color: #000;
+    font-size: 1.1em;
 }
 
 .Opciones-Tittle {
@@ -185,29 +187,52 @@ body {
 
 .Logout-Content {
     width: 100%;
-    padding: 20px;
+    padding: 10px 10px;
 }
 
-    .Logout-Content hr {
-        margin-bottom: 15px;
-    }
+.Logout-Content hr {
+    margin-bottom: 5px;
+}
 
 .Logout-Area {
     width: 100%;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     background-color: #5e72e4;
     color: var(--Blanco);
-    padding-top: 10px;
-    padding-bottom: 10px;
     border-radius: 10px;
+    transition: .3s;
+}
+
+.Logout-Area:hover {
+    background-color: var(--Amarrillo);
+    color: var(--Blanco);
+}
+
+.CerrarsesionRedireccion{
+    text-decoration: none;
+    color: var(--Blanco);
+}
+
+.CerrarSesion {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
 }
 
 .fa-right-from-bracket {
     font-size: 1.6em;
     color: red;
+}
+
+.icon-loguot{
+    position: absolute;
+    margin-right: 120px;
 }
 
 
@@ -232,15 +257,15 @@ body {
     font-size: .82em;
 }
 
-    .Page_Seleccion .Pagina {
-        grid-area: Pagina;
-        color: #E1E1E1;
-    }
+.Page_Seleccion .Pagina {
+    grid-area: Pagina;
+    color: #E1E1E1;
+}
 
-    .Page_Seleccion .Seleccion {
-        grid-area: Seleccion;
-        color: var(--Blanco);
-    }
+.Page_Seleccion .Seleccion {
+    grid-area: Seleccion;
+    color: var(--Blanco);
+}
 
 .Titulo-Pagina {
     grid-area: Titulo;
@@ -260,8 +285,9 @@ body {
 
 .Barras {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
 }
 
 .Agregar-Productos {
@@ -277,38 +303,43 @@ body {
     border: none;
     cursor: pointer;
     transition: .3s;
+    font-size: .7em;
 }
 
-    .Agregar-Productos:hover {
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
-    }
+.Agregar-Productos h1 {
+    display: none;
+}
 
-        .Agregar-Productos:hover span {
-            background-color: var(--Blanco);
-        }
+.Agregar-Productos:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+}
 
-        .Agregar-Productos:hover .fa-plus {
-            color: #78BDEB;
-        }
+.Agregar-Productos:hover span {
+    background-color: var(--Blanco);
+}
+
+.Agregar-Productos:hover .fa-plus {
+    color: #78BDEB;
+}
 
 
-    .Agregar-Productos span {
-        width: 50px;
-        height: 50px;
-        background-color: #78BDEB;
-        border-radius: 50vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: .3s;
-    }
+.Agregar-Productos span {
+    width: 30px;
+    height: 30px;
+    background-color: #78BDEB;
+    border-radius: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
 
-    .Agregar-Productos .fa-plus {
-        font-size: 2em;
-        color: var(--Blanco);
-        margin-left: 2px;
-        transition: .3s;
-    }
+.Agregar-Productos .fa-plus {
+    font-size: 2em;
+    color: var(--Blanco);
+    margin-left: 2px;
+    transition: .3s;
+}
 
 .Titulo {
     background-color: var(--Blanco);
@@ -317,27 +348,38 @@ body {
     border-radius: 20px;
     display: grid;
     grid-template:
-        "Titulo Icono"
-        "Numero Icono";
+        "Titulo Titulo Icono"
+        "NumeroL Numero Icono";
     column-gap: 20px;
     align-items: center;
 }
 
-    .Titulo h1 {
-        grid-area: Titulo;
-        font-size: 1.8em;
-    }
+.Titulo h1 {
+    grid-area: Titulo;
+    font-size: 1.1em;
+}
 
-    .Titulo h4 {
-        grid-area: Numero;
-        color: grey;
-    }
+.Titulo .textoProductos {
+    grid-area: NumeroL;
+    color: grey;
+    font-size: 12px;
+    width: max-content;
+    font-weight: 500;
+}
 
-    .Titulo span {
-        grid-area: Icono;
-        font-size: 2em;
-        color: var(--Rojo);
-    }
+.Titulo .numeroProductos {
+    grid-area: Numero;
+    color: grey;
+    font-size: 12px;
+    margin-left: -20px;
+    font-weight: 500;
+}
+
+.Titulo span {
+    grid-area: Icono;
+    font-size: 2em;
+    color: var(--Rojo);
+}
 
 .Lista-Productos {
     width: 100%;
@@ -347,7 +389,7 @@ body {
 }
 
 .Imagen-Area {
-    width: 175px;
+    width: 145px;
     height: 120px;
     transition: .3s;
 }
@@ -360,10 +402,9 @@ body {
     transition: .3s;
 }
 
-    .Imagen-Producto:hover {
-        transform: translate(0px, 20px);
-    }
-
+.Imagen-Producto:hover {
+    transform: translate(0px, 9px);
+}
 
 .Imagen-Area h2 {
     position: relative;
@@ -374,14 +415,14 @@ body {
     width: max-content;
     padding: 5px;
     color: white;
-    font-size: 1.1em;
+    font-size: .8em;
     transition: .3s;
 }
 
 .Producto-Info {
     position: relative;
     top: -55px;
-    right: -150px;
+    right: -120px;
     font-size: 1.5em;
     width: 40px;
     height: 40px;
@@ -393,11 +434,11 @@ body {
     transition: .3s;
 }
 
-    .Producto-Info:hover {
-        /*background-color: rgba(0, 0, 0, 0);*/
-        background-color: var(--Blanco);
-        color: #5e72e4;
-    }
+.Producto-Info:hover {
+    /*background-color: rgba(0, 0, 0, 0);*/
+    background-color: var(--Blanco);
+    color: #5e72e4;
+}
 
 .Imagen-Producto:hover .Producto-Info {
     transform: translate(0px, 20px);
@@ -415,23 +456,23 @@ body {
     align-items: center;
 }
 
-    .Instrucciones h1 {
-        font-size: .9em;
-    }
+.Instrucciones h1 {
+    font-size: .9em;
+}
 
-    .Instrucciones span {
-        display: flex;
-        width: 50px;
-        height: 50px;
-        background-color: #78BDEB;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50vh;
-    }
+.Instrucciones span {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: #78BDEB;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50vh;
+}
 
-    .Instrucciones .fa-pen {
-        font-size: 1.5em;
-    }
+.Instrucciones .fa-pen {
+    font-size: 1.5em;
+}
 
 .Formulario-Imagenes {
     grid-template:
@@ -503,35 +544,35 @@ body {
     display: inline-block;
 }
 
-    .file-select::before {
-        margin-top: 30px;
-        background-color: var(--Rojo);
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        content: 'Seleccionar';
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        transition: .3s;
-        cursor: pointer;
-    }
+.file-select::before {
+    margin-top: 30px;
+    background-color: var(--Rojo);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    content: 'Seleccionar';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: .3s;
+    cursor: pointer;
+}
 
-    .file-select:hover::before {
-        background-color: var(--Amarrillo);
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
-    }
+.file-select:hover::before {
+    background-color: var(--Amarrillo);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+}
 
-    .file-select input[type="file"] {
-        opacity: 0;
-        width: 200px;
-        height: 32px;
-        display: inline-block;
-    }
+.file-select input[type="file"] {
+    opacity: 0;
+    width: 200px;
+    height: 32px;
+    display: inline-block;
+}
 
 #src-file1::before {
     content: 'Seleccionar Imagen';
@@ -551,6 +592,11 @@ body {
     grid-area: Indicacion;
     font-size: 1.3em;
     width: max-content;
+}
+
+.Area-Nombre h2 {
+    font-size: 1.2em;
+    color: gray;
 }
 
 .Area-Nombre span {
@@ -640,37 +686,37 @@ body {
     width: max-content;
 }
 
-    .Area-Stock h3 {
-        grid-area: Indicacion;
-        font-size: 1.3em;
-    }
+.Area-Stock h3 {
+    grid-area: Indicacion;
+    font-size: 1.3em;
+}
 
-    .Area-Stock span {
-        grid-area: Icono;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        border-bottom-left-radius: 10px;
-        border-top-left-radius: 10px;
-        border: 2px solid var(--Amarrillo);
-        border-right: none;
-        width: 60px;
-        height: 60px;
-        font-size: 1.9em;
-    }
+.Area-Stock span {
+    grid-area: Icono;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border: 2px solid var(--Amarrillo);
+    border-right: none;
+    width: 60px;
+    height: 60px;
+    font-size: 1.9em;
+}
 
-    .Area-Stock .Stock {
-        grid-area: Input;
-        border: 2px solid var(--Amarrillo);
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-        width: 238px;
-        outline: none;
-        padding: 10px;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 1.3em;
-    }
+.Area-Stock .Stock {
+    grid-area: Input;
+    border: 2px solid var(--Amarrillo);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 238px;
+    outline: none;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.3em;
+}
 
 .Stock:hover {
     border: 2px solid var(--Rojo);
@@ -695,13 +741,13 @@ input[type=number]::-webkit-outer-spin-button {
     height: 60px;
 }
 
-    .textarea:hover {
-        border: 2px solid var(--Rojo);
-    }
+.textarea:hover {
+    border: 2px solid var(--Rojo);
+}
 
-    .textarea:focus {
-        border: 2px solid var(--Rojo);
-    }
+.textarea:focus {
+    border: 2px solid var(--Rojo);
+}
 
 
 .Area-Descripcion {
@@ -713,10 +759,10 @@ input[type=number]::-webkit-outer-spin-button {
     width: max-content;
 }
 
-    .Area-Descripcion h3 {
-        grid-area: Indicacion;
-        font-size: 1.3em;
-    }
+.Area-Descripcion h3 {
+    grid-area: Indicacion;
+    font-size: 1.3em;
+}
 
 
 .Area-Precio Text-Box {
@@ -734,21 +780,21 @@ input[type=number]::-webkit-outer-spin-button {
     transition: .3s;
 }
 
-    .Añadir:hover {
-        background-color: var(--Rojo);
-        color: #ffff;
-        cursor: pointer;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.40);
-    }
+.Añadir:hover {
+    background-color: var(--Rojo);
+    color: #ffff;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.40);
+}
 
 .Area-Radio {
     display: grid;
     gap: 10px;
 }
 
-    .Area-Radio h3 {
-        font-size: 1.3em;
-    }
+.Area-Radio h3 {
+    font-size: 1.3em;
+}
 
 .Radio {
     display: flex;
@@ -756,9 +802,9 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
 }
 
-    .Radio label {
-        font-size: 1.2em;
-    }
+.Radio label {
+    font-size: 1.2em;
+}
 
 
 #ContentPlaceHolder1_unidad1 {
@@ -923,7 +969,6 @@ input[type=number]::-webkit-outer-spin-button {
     border-left: none;
     cursor: pointer;
     padding: 15px;
-    padding-right: 13px;
     font-size: 1.9em;
 }
 
@@ -977,9 +1022,9 @@ input[type=number]::-webkit-outer-spin-button {
     gap: 20px;
 }
 
-    .Repartidor-Area:hover, .Usuario-Area:hover {
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.40);
-    }
+.Repartidor-Area:hover, .Usuario-Area:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.40);
+}
 
 .Repartidor-Area:nth-child(odd),
 .Usuario-Area:nth-child(odd) {
@@ -997,8 +1042,8 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
 }
 
-.NombreRepartidor {
-    font-size: 1em;
+.NombreRepartidor, .EstatusRepartidor {
+    font-size: .7em;
 }
 
 .Input-NombreRepartidor, .Input-NombreUsuario {
@@ -1006,17 +1051,20 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .Button-InfoUsuario {
-    width: 60px;
-    height: 60px;
+    height: 30px;
+    width: 30px;
     border-radius: 50vh;
     border: none;
     font-size: 1.9em;
     cursor: pointer;
     transition: .3s;
+    padding: 0px 5px;
+    font-size: .7em;
 }
 
 .Button-InfoUsuario:hover {
-    background-color: var(--Amarrillo);
+    background-color: var(--Rojo);
+    color: #fff;
 }
 
 .Info-Repartidor {
@@ -1165,10 +1213,10 @@ input[type=number]::-webkit-outer-spin-button {
     transition: .3s;
 }
 
-    .Button-Search:hover {
-        background-color: black;
-        color: #f0f0f0;
-    }
+.Button-Search:hover {
+    background-color: black;
+    color: #f0f0f0;
+}
 
 .IconoUsuario {
     font-size: 1.9em;
@@ -1187,7 +1235,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 20px;
     padding: 20px;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     gap: 20px;
     width: max-content;
 }
@@ -1241,7 +1289,7 @@ input[type=number]::-webkit-outer-spin-button {
     color: #51b8f8;
 }
 
-.Icono-Usuario-calendar {
+.Icono-Usuario-email {
     color: #e15dc4;
 }
 
@@ -1259,30 +1307,13 @@ input[type=number]::-webkit-outer-spin-button {
     height: 40px;
 }
 
-.Contenido-Pedidos{
+.Contenido-Pedidos {
     display: flex;
     flex-direction: column;
     gap: 20px;
     display: flex;
     flex-direction: row;
 }
-
-#map {
-    height: 600px;
-    width: 100%;
-    min-width: 300px;
-    border-radius: 10px;
-}
-
-.Area-Mapa {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 20px;
-}
-
 
 
 .Area-Pedidos {
@@ -1295,19 +1326,15 @@ input[type=number]::-webkit-outer-spin-button {
     gap: 20px;
 }
 
-.Area-Tabla {
-    width: 100%;
-    max-width: 300px;
-    grid-area: Tabla;
-    overflow-x: auto;
-    white-space: nowrap;
-}
-
 .fa-truck-fast {
-    color: #C7EFCF;
+    color: #AFCBFF;
 }
 
-.Area-Lista_Pedidos{
+.fa-clock {
+    color: #EC75B9;
+}
+
+.Area-Lista_Pedidos {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -1330,7 +1357,7 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #ff9806;
 }
 
-.Localizacion, .Ruta, .Asignar-Repartidor{
+.Localizacion, .Ruta, .Asignar-Repartidor {
     width: 40px;
     height: 40px;
     border-radius: 5vh;
@@ -1345,13 +1372,237 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
 }
 
+.alerta {
+    color: red;
+    position: relative;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.Formulario-Horas {
+    width: max-content;
+    height: max-content;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.Area-Tiempo {
+    height: 60px;
+    font-size: 2em;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    outline: none;
+    border: 2px solid var(--Amarrillo);
+}
+
+.Formulario-Hora {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(8, auto);
+}
+
+.dia, .noche {
+    display: flex;
+}
+
+.dia span {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6em;
+    border-radius: 20px;
+    border: 2px solid var(--Amarrillo);
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right: none;
+}
+
+.noche span {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6em;
+    border-radius: 20px;
+    border: 2px solid var(--Amarrillo);
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right: none;
+}
+
+.Boton-Hora {
+    width: 100%;
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--Amarrillo);
+    cursor: pointer;
+}
+
+#ContentPlaceHolder1_updImagenRepartidor {
+    width: 100%;
+    height: 60px;
+}
+
+input[type="checkbox"] + label:before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    float: left;
+    margin: 0.5em 0.5em 0 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+}
+
+input[type="checkbox"]:checked + label:before {
+    border-color: var(--Amarrillo);
+}
+
+input[type="checkbox"]:checked + label:after {
+    content: "";
+    width: 12px;
+    height: 6px;
+    border: 4px solid #A1E44D;
+    float: left;
+    margin-left: -1.95em;
+    border-right: 0;
+    border-top: 0;
+    margin-top: 1em;
+    transform: rotate(-55deg);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    font-weight: bold;
+    line-height: 3em;
+    color: #ccc;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label {
+    color: var(--Amarrillo);
+}
+
+.Button-Horas {
+    grid-column: 1 / 3;
+}
+
+.EnviarHoras {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--Amarrillo);
+    font-family: 'Ubuntu', sans-serif;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.EnviarHoras:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    background-color: var(--Rojo);
+    color: var(--Blanco);
+}
+
+.Contenedor-Imagen_Repartidor {
+    height: 60px;
+    width: 60px;
+    display: flex;
+}
+
+.Imagen-Repartidor {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50vh;
+}
+
+.ID-Producto {
+    display: none;
+}
+
+.NombreUsuario, .EstatusUsuario {
+    font-size: .7em;
+}
+
+.Contendor-Informacion_Repartidor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Area-Lista_Pedidos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Pedido {
+    background-color: #FFD294;
+    width: 100%;
+    height: 60px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.Pedido:nth-child(odd) {
+    background-color: #ff9806;
+}
+
+.Localizacion, .Ruta, .Asignar-Repartidor {
+    width: 40px;
+    height: 40px;
+    border-radius: 5vh;
+    border: none;
+    transition: .3s;
+    font-size: 1.1em;
+}
+
+.Localizacion:hover, .Ruta:hover, .Asignar-Repartidor:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    color: #ff6961;
+    cursor: pointer;
+}
+
+.Mapa-Tabla {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+#map {
+    width: 100%;
+    height: 700px;
+    border-radius: 20px;
+}
 
 .gridview {
     color: black;
     text-align: center;
     font-size: .8em;
-    border: 1px solid #ff9806;
-    min-width: 300px;
+    width: 300px;
+    display: flex;
+    overflow-x: scroll;
+    border: none;
 }
 
 .gridview th {
@@ -1360,43 +1611,119 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #ff9806;
 }
 
+#myModal {
+    display: none;
+}
+
 .gridview td {
     padding: 5px;
 }
 
+
 .modal {
-    display: none; /* Ocultar el modal por defecto */
+    padding: 20px;
+    width: max-content;
+    font-family: 'Ubuntu', sans-serif;
     position: fixed; /* Permite que el modal flote por encima del contenido de la página */
     z-index: 1; /* Ubica el modal por encima de otros elementos en la página */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    margin: auto;
     overflow: auto; /* Habilita el desplazamiento si el contenido del modal es demasiado grande */
-    background-color: rgb(0,0,0); /* Fondo oscuro semitransparente */
-    background-color: rgba(0,0,0,0.4); /* Fondo oscuro semitransparente */
-}
-/* Estilo del contenido del modal */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* Alinea el contenido verticalmente y centraliza horizontalmente */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-/* Estilo del botón de cierre del modal */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    background-color: var(--Blanco);
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    margin-left: 10px;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
+.modal-content {
+    display: grid;
+    gap: 5px;
+}
+
+.btn-cross {
+    width: 40px;
+    height: 40px;
+    border-radius: 50em;
+    border: none;
+    background-color: #ffffff00;
+    font-size: 1.4em;
+    transition: .3s;
     cursor: pointer;
+}
+
+.btn-cross:hover {
+    background-color: var(--Rojo);
+    color: var(--Blanco);
+}
+
+.inputs-content {
+    display: grid;
+    gap: 10px;
+}
+
+.listbox-container select {
+    height: 40px;
+    padding: 10px;
+    font-weight: 500;
+    border-radius: 10px;
+    outline: none;
+}
+
+.listbox-container select option {
+    background-color: #c9f4fc;
+    font-family: 'Ubuntu', sans-serif;
+    Border-radius: 10px;
+}
+
+.inputs-content button {
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--Amarrillo);
+    transition: .3s;
+    font-weight: 700;
+}
+
+.inputs-content h1 {
+    font-size: .9em;
+}
+
+.inputs-content button:hover {
+    background-color: var(--Rojo);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    color: var(--Blanco);
+}
+
+.btns-cerrarsesion {
+    display: grid;
+    grid-template-columns: repeat(2, 50%)
+}
+
+.btns-cerrarsesion div{
+    width: 90%;
+}
+
+.btn-si, .btn-no {
+    width: 100%;
+    height: 40px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 20px;
+    font-weight: 700;
+    color: var(--Blanco);
+    background-color: var(--Amarrillo);
+    border: none;
+    transition: .3s;
+    cursor: pointer;
+}
+.btn-si:hover, .btn-no:hover {
+    background-color: var(--Rojo)
+}
+
+.Input_RU{
+    width: 236.5px;
+}
+
+.InputC_RU{
+    width: 176.5px;
 }
 
 @media(min-width: 728px) {
@@ -1472,24 +1799,95 @@ input[type=number]::-webkit-outer-spin-button {
     .NombreRepartidor {
         font-size: 1.3em;
     }
+
     .textarea {
         width: 408px;
     }
 
-    .Area-Mapa{
-        flex-direction:row;
+    .Titulo h1 {
+        grid-area: Titulo;
+        font-size: 1.8em;
+    }
+
+    .Agregar-Productos h1 {
+        display: flex;
+    }
+
+    .Agregar-Productos {
+        font-size: 1em;
+    }
+
+    .Agregar-Productos span {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Titulo h4 {
+        font-size: .9em;
+    }
+
+    .Logout-Content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .Logout-Content hr {
+        margin-bottom: 20px;
+    }
+
+    .NombreRepartidor, .EstatusRepartidor {
+        font-size: 1.3em;
+    }
+
+    .Button-InfoUsuario {
+        height: 60px;
+        width: 60px;
+        border-radius: 50vh;
+        border: none;
+        font-size: 1.9em;
+        cursor: pointer;
+        transition: .3s;
+        padding: 0px 20px;
+        font-size: 1em;
+    }
+
+    .NombreUsuario, .EstatusUsuario {
+        font-size: 1.3em;
+    }
+
+    .Contendor-Informacion_Repartidor {
+        flex-direction: row;
+    }
+
+    .Area-Mapa {
+        flex-direction: row;
         gap: 20px;
+    }
+
+    .gridview {
+        width: auto;
+        display: flex;
+        overflow-x: hidden;
+        border: none;
+    }
+    .Titulo .textoProductos {
+        font-size: 18px;
+    }
+
+    .Titulo .numeroProductos {
+        font-size: 18px;
+        margin-left: -40px;
+    }
+
+    .inputs-content h1 {
+        font-size: 1.3em;
     }
 }
 
+
 @media(min-width: 1024px) {
-    .Area-Tabla {
-        width: 100%;
-        max-width: 50%;
-        grid-area: Tabla;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
     .Aside-Content {
         display: flex;
     }
@@ -1509,7 +1907,6 @@ input[type=number]::-webkit-outer-spin-button {
             min-content auto;
         gap: 20px;
     }
- 
 }
 
 @keyframes shake {
@@ -1523,9 +1920,5 @@ input[type=number]::-webkit-outer-spin-button {
 
     75% {
         translate: 6px 0;
-    }
-
-    .Area-Mapa {
-        flex-direction: row;
     }
 }

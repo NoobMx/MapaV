@@ -18,20 +18,25 @@ namespace AplicacionWebAdministrador
 
         protected void Send_Click(object sender, EventArgs e)
         {
+
             Administrador administrador = new Administrador()
             {
                 NombreUsuario = NombreUsuario.Text,
-                Contraseña  = Contraseña.Text
+                Contraseña = Contraseña.Text
             };
             Administrador objAdmin = new Administrador();
             String adminV = objAdmin.ValidarAdministrador(administrador);
             if (adminV != "null")
             {
+                Session["nombreUsuario"] = NombreUsuario.Text;
+                Session["contraseña"] = Contraseña.Text;
+
                 Response.Redirect("~/Productos.aspx");
+
             }
             else
             {
-                
+
             }
         }
     }

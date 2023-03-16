@@ -90,12 +90,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AsignarHoras.aspx" />
     <Content Include="css\EstilosLogin.css" />
-    <Content Include="css\EstilosRUS.css" />
-    <Content Include="css\Opciones.css" />
-    <Content Include="css\EstilosAP.css" />
     <Content Include="css\EstiloLayouts.css" />
-    <Content Include="css\EstilosProductos.css" />
     <Content Include="Dom\DOMLogin.js" />
     <Content Include="Dom\Aside.js" />
     <Content Include="Dom\Mapa.js" />
@@ -106,8 +103,6 @@
     <Content Include="images\layered-waves-haikeiRU.svg" />
     <Content Include="images\Maps.png" />
     <Content Include="images\wave-haikei.svg" />
-    <Content Include="Mapa.aspx" />
-    <Content Include="mapaOne.aspx" />
     <Content Include="Web.config" />
     <Content Include="InicioSesión.aspx" />
     <Content Include="Productos.aspx" />
@@ -119,28 +114,26 @@
     <Content Include="ListaRepartidores.aspx" />
     <Content Include="RegistrarRepartidor.aspx" />
     <Content Include="Usuarios.aspx" />
+    <Content Include="CerrarSesion.aspx" />
+    <Content Include="HistorialPedidos.aspx" />
+    <Content Include="WebForm4.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AsignarHoras.aspx.cs">
+      <DependentUpon>AsignarHoras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsignarHoras.aspx.designer.cs">
+      <DependentUpon>AsignarHoras.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\PedidosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Mapa.aspx.cs">
-      <DependentUpon>Mapa.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Mapa.aspx.designer.cs">
-      <DependentUpon>Mapa.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="mapaOne.aspx.cs">
-      <DependentUpon>mapaOne.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="mapaOne.aspx.designer.cs">
-      <DependentUpon>mapaOne.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Models\Administrador.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Horario.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Repartidor.cs" />
@@ -228,6 +221,27 @@
     </Compile>
     <Compile Include="Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CerrarSesion.aspx.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CerrarSesion.aspx.designer.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HistorialPedidos.aspx.cs">
+      <DependentUpon>HistorialPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistorialPedidos.aspx.designer.cs">
+      <DependentUpon>HistorialPedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm4.aspx.cs">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm4.aspx.designer.cs">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

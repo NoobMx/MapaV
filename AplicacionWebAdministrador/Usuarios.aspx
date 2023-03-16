@@ -10,30 +10,23 @@
     <div class="Contenido">
         <div class="Area-InstruccionBuscar">
             <div class="Instrucciones Usuarios-Ins">
-                <h1>Lista de Usuarios.</h1>
+                <h1>Lista de Clientes.</h1>
                 <span><i class="fa-solid fa-user-group"></i></span>
-            </div>
-            <form class="Area-Buscar" action="./InformacionRepartidor.aspx" runat="server">
-                <asp:TextBox class="Input-Search" type="text" name="Buscar-Usuario" placeholder="Busque al usuario" ID="buscar" runat="server" /></asp:TextBox>
-                <asp:Button class="Button-Search" type="submit" Text=">" runat="server" />
-            </form>                
+            </div>             
         </div>
         <div class="Lista-Usuarios">
-            <div class="Usuario-Area">
-                <span class="IconoUsuario"><i class="fa-solid fa-user-large"></i></span>
-                <h1 class="NombreRepartidor">1. Rodriguez Diaz Rodrigo</h1>
-                <form action="./EditarUsuarios.html">
-                    <input class="Input-NombreUsuario" type="text" value="RodrigoRodriguezDiaz" name="RodrigoRodriguezDiaz">
-                    <button class="Button-InfoUsuario" type="submit"><i class="fa-solid fa-angle-right"></i></button>
-                </form>
-            </div>
-            <div class="Repartidor-Area">
-                <span class="IconoUsuario"><i class="fa-solid fa-user-large"></i></span>
-                <h1 class="NombreRepartidor">2. Garcia Alvarado Juan Daniel</h1>
-                <form action="./EditarUsuarios.html">
-                    <input class="Input-NombreRepartidor" type="text" value="RodrigoRodriguezDiaz" name="RodrigoRodriguezDiaz">
-                    <button class="Button-InfoUsuario" type="submit"><i class="fa-solid fa-angle-right"></i></button>
-                </form>
+            <asp:Repeater ID="rptClientes" runat="server">
+                <ItemTemplate>
+                    <div class="Usuario-Area">
+                        <h1 class="NombreUsuario"><%# Eval("Nombre") %></h1>
+                        <h3 class="EstatusUsuario">Estatus: <%# Eval("Estatus") %></h3>
+                        <form method="post" action="./EditarUsuarios.aspx">
+                             <input class="ID-Producto" type="text" name="usuario" value="<%# Eval("ID") %>"/>
+                            <button class="Button-InfoUsuario" type="submit"><i class="fa-solid fa-angle-right"></i></button>
+                        </form>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
             </div>
         </div>
     </div>

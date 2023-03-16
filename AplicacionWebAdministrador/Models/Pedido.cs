@@ -36,7 +36,7 @@ namespace AplicacionWebAdministrador.Models
         public long ClienteNumeroTelefono { get; set; }
         public double PrecioTotal { get; set; }
         public string RepartidorNombre { get; set; }
-        public DateTime Fecha { get; set; }
+        public DateTime DiaPedido { get; set; }
         public String Horario { get; set; }
         public List<Producto> productos { get; set; }
     }
@@ -49,7 +49,7 @@ namespace AplicacionWebAdministrador.Models
         public double PrecioTotal { get; set; }
         public string RepartidorNombre { get; set; }
         public String ProductoNombre_Cantidad { get; set; }
-        public String Dia { get; set; }
+        public String DiaPedido { get; set; }
         public String Horario { get; set; }
     }  
 }

@@ -11,34 +11,34 @@ namespace AplicacionWebAdministrador
 {
 
 
-    public partial class WebForm6
+    public partial class AsignarHoras
     {
 
         /// <summary>
-        /// Control fomr1.
+        /// Control FormularioNuevoProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm fomr1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm FormularioNuevoProducto;
 
         /// <summary>
-        /// Control rptRepartidor.
+        /// Control rptHorario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptRepartidor;
+        protected global::System.Web.UI.WebControls.Repeater rptHorario;
 
         /// <summary>
-        /// Control rptRepartidorFoto.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptRepartidorFoto;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

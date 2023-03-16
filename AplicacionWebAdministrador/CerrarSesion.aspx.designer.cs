@@ -11,34 +11,25 @@ namespace AplicacionWebAdministrador
 {
 
 
-    public partial class WebForm6
+    public partial class WebForm14
     {
 
         /// <summary>
-        /// Control fomr1.
+        /// Control Cerrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm fomr1;
+        protected global::System.Web.UI.WebControls.Button Cerrar;
 
         /// <summary>
-        /// Control rptRepartidor.
+        /// Control Redirigir.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptRepartidor;
-
-        /// <summary>
-        /// Control rptRepartidorFoto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptRepartidorFoto;
+        protected global::System.Web.UI.WebControls.Button Redirigir;
     }
 }

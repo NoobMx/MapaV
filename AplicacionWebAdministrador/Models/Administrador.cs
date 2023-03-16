@@ -11,6 +11,7 @@ namespace AplicacionWebAdministrador.Models
         PeticionHTTP peticion = new PeticionHTTP("https://ecommerce.administracion-op.com");
         public int ID { get; set; }
         public string NombreUsuario { get; set; }
+        public string Nombre { get; set; }
         public string Contraseña { get; set; }
         public String ValidarAdministrador(Administrador administrador)
         {

@@ -1,17 +1,17 @@
-﻿//const archivo = document.querySelector(".SeleccionarImagen"),
-//    previsualizacion = document.querySelector(".previsulizacion");
+﻿const archivo = document.querySelector(".SeleccionarImagen"),
+    previsualizacion = document.querySelector(".previsulizacion");
 
-//archivo.addEventListener("change", () => {
-//    const archivos = archivo.files;
+archivo.addEventListener("change", () => {
+    const archivos = archivo.files;
 
-//    if (!archivos || !archivos.length) {
-//        previsualizacion.src = "";
-//        return;
-//    }
+    if (!archivos || !archivos.length) {
+        previsualizacion.src = "";
+        return;
+    }
 
-//    const primerArchivo = archivos[0];
+    const primerArchivo = archivos[0];
 
-//    const objectUrl = URL.createObjectURL(primerArchivo);
+    const objectUrl = URL.createObjectURL(primerArchivo);
 
-//    previsualizacion.src = objectUrl;
-//})
+    previsualizacion.src = objectUrl;
+})

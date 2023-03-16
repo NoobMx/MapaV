@@ -10,31 +10,26 @@
     <div class="Contenido">
         <div class="Area-InstruccionBuscar">
             <div class="Instrucciones Repartidores-Ins">
-                <h1>Lista de los Reparitidores.</h1>
+                <h1>Lista de Repartidores.</h1>
                 <span><i class="fa-solid fa-people-carry-box"></i></span>
-            </div>
-            <form class="Area-Buscar" action="./InformacionRepartidor.aspx" runat="server">
-                <asp:TextBox class="Input-Search" type="text" name="Buscar-Usuario" placeholder="Busque al usuario" ID="buscar" runat="server" /></asp:TextBox>
-                <asp:Button class="Button-Search" type="submit" Text=">" runat="server" />
-            </form>                
+            </div>            
         </div>
         <div class="Lista-Repartidores">
-            <div class="Repartidor-Area">
-                <span class="IconoPersona"><i class="fa-regular fa-circle-user"></i></span>
-                <h1 class="NombreRepartidor">1. Rodriguez Diaz Rodrigo</h1>
-                <form action="./InformacionRepartidor.aspx" ID="fomr1" >
-                    <input class="Input-NombreRepartidor" type="text" value="RodrigoRodriguezDiaz" name="RodrigoRodriguezDiaz">
-                    <button class="Button-InfoUsuario" type="submit"><i class="fa-solid fa-angle-right"></i></button>
-                </form>
-            </div>
-            <div class="Repartidor-Area">
-                <span class="IconoPersona"><i class="fa-regular fa-circle-user"></i></span>
-                <h1 class="NombreRepartidor">2. Garcia Alvarado Juan Daniel</h1>
-                <form action="./InformacionRepartidor.aspx">
-                    <input class="Input-NombreRepartidor" type="text" value="RodrigoRodriguezDiaz" name="RodrigoRodriguezDiaz">
-                    <button class="Button-InfoUsuario" type="submit"><i class="fa-solid fa-angle-right"></i></button>
-                </form>
-            </div>
+                <asp:Repeater ID="rptRepartidores" runat="server">
+                    <ItemTemplate>
+                        <div class="Repartidor-Area">
+                            <div class="Contenedor-Imagen_Repartidor">
+                                <img class="Imagen-Repartidor" src="data:image/png;base64,<%# Convert.ToBase64String((byte[])Eval("Foto")) %>" alt="Alternate Text" />
+                            </div>
+                            <h1 class="NombreRepartidor"><%# Eval("Nombre") %></h1>
+                            <h3 class="EstatusRepartidor">Estatus: <%# Eval("Estatus") %></h3>
+                            <form method="post" action="./InformacionRepartidor.aspx">
+                                <input class="ID-Producto" type="text" name="repartidor" value="<%# Eval("ID") %>"/>
+                                <button  class="Button-InfoUsuario" type="submit"><i class="fa-solid fa-chevron-right"></i></button>
+                            </form>                           
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
         </div>
     </div>
 </asp:Content>

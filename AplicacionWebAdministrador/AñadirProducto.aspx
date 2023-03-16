@@ -16,21 +16,21 @@
             <div class="Formulario-Imagenes">
                 <form class="Formulario formulario" id="form1" runat="server">
                     <div class="Area-Nombre">
-                        <h3>Cambiar Nombre:</h3>
+                        <h3>Asignar Nombre:</h3>
                         <span><i class="fa-solid fa-file-signature"></i></span>
-                        <asp:TextBox class="Nombre" type="text" ID="Txt_nombre" runat="server" required></asp:TextBox>
+                        <asp:TextBox class="Nombre" type="text" ID="Txt_nombre" runat="server" MaxLength="20" required></asp:TextBox>
                     </div>
                     <div class="Area-File file-select" id="src-file1">
-                        <h3>Seleccione la Imagen del Producto</h3>
-                        <asp:FileUpload class="File SeleccionarImagen" accept="image/jpeg" ID="updImagenProducto" runat="server"  arial-label="Imagen" required/>
+                        <h3>Seleccione la Imagen del Producto:</h3>
+                        <asp:FileUpload class="File SeleccionarImagen" accept="image/*" ID="updImagenProducto" runat="server"  arial-label="Imagen" required/>
                     </div>
                     <div class="Area-Radio">
-                        <h3>Seleccione el Tipo de Unidad</h3>
+                        <h3>Tipo de Unidad:</h3>
                         <asp:RadioButton class="Radio" type="radio" GroupName="unidad" ID="unidad1" runat="server" value="Kilo" Text="Kilo" required/>
                         <asp:RadioButton class="Radio" type="radio" GroupName="unidad" ID="unidad2" runat="server" value="Unidad" Text="Unidad" required/>
                     </div>
                     <div class="Area-Precio">
-                        <h3>Precio del Producto</h3>
+                        <h3>Precio del Producto:</h3>
                         <span><i class="fa-solid fa-dollar-sign"></i></span>
                         <asp:TextBox class="Precio" type="number" ID="Txt_precio" runat="server" required></asp:TextBox>
                     </div>
@@ -40,7 +40,7 @@
                         <asp:TextBox class="Stock" type="number" ID="Txt_stock" runat="server" required></asp:TextBox>
                     </div>
                     <div class="Area-Descripcion">
-                        <h3>Cambiar la Descripcion:</h3>
+                        <h3>Asignar Descripción:</h3>
                         <asp:TextBox class="textarea" ID="Txt_Descripcion" required runat="server"></asp:TextBox>
                     </div>
                     <div class="Area-Añadir">
@@ -52,4 +52,23 @@
                 </div>
             </div>
         </div>
+    <script>
+        const archivo = document.querySelector(".SeleccionarImagen"),
+            previsualizacion = document.querySelector(".previsulizacion");
+
+        archivo.addEventListener("change", () => {
+            const archivos = archivo.files;
+
+            if (!archivos || !archivos.length) {
+                previsualizacion.src = "";
+                return;
+            }
+
+            const primerArchivo = archivos[0];
+
+            const objectUrl = URL.createObjectURL(primerArchivo);
+
+            previsualizacion.src = objectUrl;
+        })
+    </script>
 </asp:Content>

@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginasMaestras/layout.Master" AutoEventWireup="true" CodeBehind="Productos.aspx.cs" Inherits="AplicacionWebAdministrador.WebForm7" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="js/Productos.js"></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -12,10 +14,11 @@
         <div class="Barras">
             <div class="Titulo">
                 <h1>Lista de Productos</h1>
-                <h4>Numero de Productos: 48</h4>
+                <label class="textoProductos">Numero de Productos:</label>
+                <asp:Label class="numeroProductos" ID="NumeroProductos" runat="server" ></asp:Label>
                 <span><i class="fa-solid fa-boxes-stacked"></i></span>
             </div>
-            <form action="./AñadirProducto.aspx" >
+            <form action="./AñadirProducto.aspx">
                 <button class="Agregar-Productos" type="submit">
                     <h1>Agregar Productos</h1>
                     <span><i class="fa-solid fa-plus"></i></span>
@@ -23,24 +26,20 @@
             </form>
         </div>
         <div class="Lista-Productos">
-            <div class="Producto">
-                <div class="Imagen-Area">
-                    <img class="Imagen-Producto" src="https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Alternate Text" />
-                    <h2>Coca Cola</h2>
-                    <form action="./EditarProducto.aspx">
-                        <button class="Producto-Info"><i class="fa-solid fa-chevron-right"></i></button>
-                    </form>
-                </div>
-            </div> 
-            <div class="Producto">
-                <div class="Imagen-Area">
-                    <img class="Imagen-Producto" src="https://images.pexels.com/photos/3735149/pexels-photo-3735149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Alternate Text" />
-                    <h2 class="h2">Jabón</h2>
-                    <form action="./EditarProducto.aspx">
-                        <button class="Producto-Info"><i class="fa-solid fa-chevron-right"></i></button>
-                    </form>
-                </div>
-            </div> 
+            <asp:Repeater ID="rptProductos" runat="server">
+                <ItemTemplate>
+                    <div class="Producto">
+                        <div class="Imagen-Area">
+                            <img class="Imagen-Producto" src="data:image/png;base64,<%# Convert.ToBase64String((byte[])Eval("Foto")) %>" />
+                            <h2><%# Eval("Nombre") %></h2>
+                            <form method="post" action="./EditarProducto.aspx">
+                                <input class="ID-Producto" type="text" name="producto" value="<%# Eval("ID") %>"/>
+                                <button  class="Producto-Info" type="submit"><i class="fa-solid fa-chevron-right"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
     </div>
 </asp:Content>

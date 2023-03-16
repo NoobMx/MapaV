@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AplicacionWebAdministrador.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,13 @@ namespace AplicacionWebAdministrador.PaginasMaestras
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            NombreAdministrador.Text = Session["nombreUsuario"].ToString();
+        }
 
+        protected void Cerrar(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/InicioSesión.aspx");
         }
     }
 }
