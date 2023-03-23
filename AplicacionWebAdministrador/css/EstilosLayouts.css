@@ -52,7 +52,7 @@ body {
     justify-content: space-between;
     position: fixed;
     height: 94%;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    
     transition: .3s;
 }
 
@@ -124,7 +124,7 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .Option-Area {
@@ -381,6 +381,28 @@ body {
     color: var(--Rojo);
 }
 
+.aparecer-lista-AP {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.aparecer-lista-AP button {
+    height: 40px;
+    width: 40px;
+    font-size: 1.4em;
+    border-radius: 50vh;
+    border: none;
+    background-color: var(--Amarrillo);
+    cursor: pointer;
+    color: var(--Blanco);
+    transition: .3s;
+}
+
+.aparecer-lista-AP button:hover {
+    background-color: var(--Rojo);
+}
+
 .Lista-Productos {
     width: 100%;
     display: flex;
@@ -388,10 +410,18 @@ body {
     gap: 30px;
 }
 
+.Abrir {
+    display: none;
+}
+
 .Imagen-Area {
     width: 145px;
     height: 120px;
     transition: .3s;
+}
+
+.Vuelta {
+    transform: rotate(270deg);
 }
 
 .Imagen-Producto {
@@ -1725,6 +1755,48 @@ input[type="checkbox"]:checked + label {
 .InputC_RU{
     width: 176.5px;
 }
+
+.Area-Inputs_Fechas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+.Area-Inputs_Fechas div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Area-Inputs_Fechas-containers input {
+    border: 2px solid var(--Amarrillo);
+    padding: 0 10px;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.btn-enviarFecha {
+    border-radius: 10px;
+    height: 40px;
+    background-color: var(--Amarrillo);
+    padding: 0 20px;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+    color: var(--Blanco);
+    transition: .3s;
+    border: none;
+    align-self: flex-end;
+}
+
+.btn-enviarFecha:hover {
+    background-color: var(--Rojo);
+    padding: 0 20px;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+    color: #000;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
 
 @media(min-width: 728px) {
     .Barras {

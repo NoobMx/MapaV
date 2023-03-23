@@ -25,6 +25,10 @@
                 </button>
             </form>
         </div>
+        <div class="aparecer-lista-AP">
+            <h1>Productos Activados:</h1>
+            <button class="btn_ver"><span><i class="fa-solid fa-caret-down"></i></span></button>
+        </div>
         <div class="Lista-Productos">
             <asp:Repeater ID="rptProductos" runat="server">
                 <ItemTemplate>
@@ -42,4 +46,5 @@
             </asp:Repeater>
         </div>
     </div>
+    <script src="../Dom/VerLista.js"></script>
 </asp:Content>

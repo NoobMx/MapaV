@@ -154,7 +154,7 @@ function marcadores() {
                     '<button Onclick="abrirModal()">Asignar repartidor</button>';
                 //Crear un marcador 
                 ubicacionM = { lat: parseFloat(pedido.LatitudPedido), lng: parseFloat(pedido.LongitudPedido) };
-                var idString 
+                //var idString 
                 var marcadorC = new google.maps.Marker({
                     position: ubicacionM,
                     map: map,

@@ -26,6 +26,15 @@ namespace AplicacionWebAdministrador.Models
             List<PedidoDTO> pedidos = JsonConvert.DeserializeObject<List<PedidoDTO>>(request.ObtenerJson());
             return pedidos;
         }
+        public List<PedidoDTO> MostrarHistorialPedido(String Inicio, String Final)
+        {
+            Console.WriteLine(Inicio);
+            request.PedirComunicacion("Pedidos/MostrarHistorialPedidosAdmin?inicio="+Inicio + "&final="+Final, MetodoHTTP.GET, TipoContenido.JSON);
+            List<PedidoDTO> pedidos = JsonConvert.DeserializeObject<List<PedidoDTO>>(request.ObtenerJson());
+            
+
+            return pedidos;
+        }
     }
     public class PedidoDTO
     {

@@ -70,8 +70,9 @@ namespace AplicacionWebAdministrador
         {
             Producto producto = new Producto();
             int? productoID = ProductoID;
+            bool resp = producto.DesactivarProducto(productoID.Value);
 
-            if (productoID.HasValue && producto.DesactivarProducto(productoID.Value))
+            if (productoID.HasValue && resp)
             {
                 //Alerta
             }

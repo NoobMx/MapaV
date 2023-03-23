@@ -55,7 +55,6 @@ namespace AplicacionWebAdministrador.Models
             return peticion.ObtenerJson();
         }
 
-        //Cadena que concatena todas las variables de repartidor
         public string DatosRepartidorConcatenados
         {
             get { return $"{ID} - {Nombre} - {Calificacion} - {PedidoID}"; }

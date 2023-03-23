@@ -92,10 +92,11 @@
   <ItemGroup>
     <Content Include="AsignarHoras.aspx" />
     <Content Include="css\EstilosLogin.css" />
-    <Content Include="css\EstiloLayouts.css" />
+    <Content Include="css\EstilosLayouts.css" />
     <Content Include="Dom\DOMLogin.js" />
     <Content Include="Dom\Aside.js" />
     <Content Include="Dom\Mapa.js" />
+    <Content Include="Dom\mapaComp.js" />
     <Content Include="Dom\Previsualizacion.js" />
     <Content Include="Global.asax" />
     <Content Include="images\layered-waves-haikei.svg" />

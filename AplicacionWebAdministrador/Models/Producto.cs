@@ -42,7 +42,14 @@ namespace AplicacionWebAdministrador.Models
 
         public bool DesactivarProducto(int productoID)
         {
-            peticion.PedirComunicacion("Repartidor/BajaRepartidor?ProductoID=" + productoID, MetodoHTTP.GET, TipoContenido.JSON);
+
+           Producto producto = new Producto() 
+           { 
+               ID = productoID,
+           };
+            String serializedJson = JsonConvertidor.Objeto_Json(producto);
+            peticion.PedirComunicacion("Producto/BajaProducto", MetodoHTTP.POST, TipoContenido.JSON);
+            peticion.enviarDatos(serializedJson);
             return bool.Parse(peticion.ObtenerJson());
         }
     }
@@ -51,6 +58,7 @@ namespace AplicacionWebAdministrador.Models
         public int ID { get; set; }
         public String Nombre { get; set; }
         public dynamic Foto { get; set; }
+        public bool Estatus { get; set; }
         public double Stock { get; set; }
     }
 }

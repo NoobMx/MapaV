@@ -29,7 +29,7 @@
                     <div class="Area-Stock">
                         <h3>Cambiar Cantidad en Stock:</h3>
                         <span><i class="fa-solid fa-list"></i></span>
-                        <asp:TextBox class="Stock" type="number" ID="Txt_stock" runat="server" required></asp:TextBox>
+                        <asp:TextBox class="Stock" type="number" ID="Txt_stock" runat="server" value="0"></asp:TextBox>
                     </div>
                     <div class="Area-Añadir">
                         <asp:Button class="Añadir" type="submit" runat="server" Text="Actualizar Stock" OnClick ="Actualizar_Click"/>

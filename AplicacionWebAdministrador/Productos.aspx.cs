@@ -27,12 +27,16 @@ namespace AplicacionWebAdministrador
                 ObservableCollection<ProductosDTO> productosDTO = new ObservableCollection<ProductosDTO>();
                 listaproductos.ForEach(p =>
                 {
-                    productosDTO.Add(new ProductosDTO
+                    if (p.Estatus == true)
                     {
-                        ID = p.ID,
-                        Nombre = p.Nombre,
-                        Foto = p.Foto
-                    });
+                        productosDTO.Add(new ProductosDTO
+                        {
+                            ID = p.ID,
+                            Nombre = p.Nombre,
+                            Estatus = true,
+                            Foto = p.Foto
+                        });
+                    }
                 });
                 NumeroProductos.Text = productosDTO.Count.ToString();
                 rptProductos.DataSource = productosDTO;

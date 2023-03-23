@@ -22,6 +22,12 @@ namespace AplicacionWebAdministrador.Controllers
             List<Pedido> pedidos = JsonConvert.DeserializeObject<List<Pedido>>(request.ObtenerJson());
             return pedidos;
         }
+        public List<Pedido> MostrarHistorialPedido()
+        {
+            request.PedirComunicacion("Pedidos/MostrarHistorialPedidosAdmin", MetodoHTTP.GET, TipoContenido.JSON);
+            List<Pedido> pedidos = JsonConvert.DeserializeObject<List<Pedido>>(request.ObtenerJson());
+            return pedidos;
+        }
 
 
         //Comunicacion con el Server...
