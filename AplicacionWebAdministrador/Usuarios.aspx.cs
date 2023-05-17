@@ -18,7 +18,7 @@ namespace AplicacionWebAdministrador
         {
             if (Session["nombreUsuario"] == null || Session["contraseña"] == null)
             {
-                Response.Redirect("~/InicioSesión.aspx");
+                Response.Redirect("~/Index.aspx");
             }
             else
             {
@@ -31,17 +31,23 @@ namespace AplicacionWebAdministrador
                     if (p.Estatus)
                     {
                         s = "Activo";
+
                     }
                     else
                     {
                         s = "Inactivo";
                     }
-                    clientesDTO.Add(new ClientesDTO
+                    if (p.Estatus == true)
                     {
-                        ID = p.ID,
-                        Nombre = p.Nombre,
-                        Estatus = s
-                    });
+                        clientesDTO.Add(new ClientesDTO
+                        {
+                            ID = p.ID,
+                            Nombre = p.Nombre,
+                            Estatus = s,
+                            Calificacion = p.Calificacion,
+                            DiaPedido = p.DiaPedido.ToString("dd/MM/yyyy")
+                        });
+                    }
                 });
                 rptClientes.DataSource = clientesDTO;
                 rptClientes.DataBind();

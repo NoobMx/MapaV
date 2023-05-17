@@ -18,14 +18,15 @@ namespace AplicacionWebAdministrador
         {
             if (Session["nombreUsuario"] == null || Session["contraseña"] == null)
             {
-                Response.Redirect("~/InicioSesión.aspx");
+                Response.Redirect("~/Index.aspx");
             }
             else
             {
                 Repartidor repartidorO = new Repartidor();
                 var listarepartidores = JsonConvert.DeserializeObject<List<Repartidor>>(repartidorO.MostrarRepartidor());
+                var listaOrdenada = listarepartidores.OrderBy(p => p.Calificacion);
                 ObservableCollection<RepartidoresDTO> repartidoresDTO = new ObservableCollection<RepartidoresDTO>();
-                listarepartidores.ForEach(p =>
+                foreach (var p in listaOrdenada)
                 {
                     string s;
                     if (p.Estatus)
@@ -41,18 +42,13 @@ namespace AplicacionWebAdministrador
                         ID = p.ID,
                         Nombre = p.Nombre,
                         Estatus = s,
-                        Foto = p.Foto
+                        Foto = p.Foto,
+                        Calificacion = p.Calificacion
                     });
-                });
+                }
                 rptRepartidores.DataSource = repartidoresDTO;
                 rptRepartidores.DataBind();
             }
         }
-
-        protected void Unnamed_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

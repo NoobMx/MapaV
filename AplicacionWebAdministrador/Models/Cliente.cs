@@ -8,7 +8,7 @@ namespace AplicacionWebAdministrador.Models
 {
     public class Cliente
     {
-        PeticionHTTP peticion = new PeticionHTTP("https://ecommerce.administracion-op.com");
+        PeticionHTTP peticion = new PeticionHTTP("https://tienda.maiysal.com");
         public int ID { get; set; }
         public string Nombre { get; set; }
         public string NombreUsuario { get; set; }
@@ -18,6 +18,8 @@ namespace AplicacionWebAdministrador.Models
         public bool Estatus { get; set; }
         public double Latitud { get; set; }
         public double Longitud { get; set; }
+        public int Calificacion { get; set; }
+        public DateTime DiaPedido { get; set; }
 
         public String MostrarClientes()
         {
@@ -42,5 +44,7 @@ namespace AplicacionWebAdministrador.Models
         public string Estatus { get; set; }
         public double Latitud { get; set; }
         public double Longitud { get; set; }
+        public int Calificacion { get; set; }
+        public string DiaPedido { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace AplicacionWebAdministrador.Models
 {
     public class Repartidor
     {
-        PeticionHTTP peticion = new PeticionHTTP ("https://ecommerce.administracion-op.com");
+        PeticionHTTP peticion = new PeticionHTTP ("https://tienda.maiysal.com");
 
         public int ID { get; set; }
         public int PedidoID { get; set; }
@@ -37,11 +37,9 @@ namespace AplicacionWebAdministrador.Models
             return bool.Parse(peticion.ObtenerJson());
         }
 
-        public bool ActivarRepartidor(Repartidor repartidor)
+        public bool ActivarRepartidor(int repartidorID)
         {
-            String seralized = JsonConvertidor.Objeto_Json(repartidor);
-            peticion.PedirComunicacion("Repartidor/ValidarRepartidor", MetodoHTTP.POST, TipoContenido.JSON);
-            peticion.enviarDatos(seralized);
+            peticion.PedirComunicacion("Repartidor/AltaRepartidor?RepartidorID=" + repartidorID, MetodoHTTP.GET, TipoContenido.JSON);
             return bool.Parse(peticion.ObtenerJson());
         }
         public String MostrarRepartidor()

@@ -15,7 +15,7 @@ namespace AplicacionWebAdministrador
         {
             if (Session["nombreUsuario"] == null || Session["contraseña"] == null)
             {
-                Response.Redirect("~/InicioSesión.aspx");
+                Response.Redirect("~/Index.aspx");
             }
             else
             {
@@ -47,8 +47,10 @@ namespace AplicacionWebAdministrador
                 bool respuesta = repartidor.RegistrarRepartidor(repartidorR);
                 if (respuesta)
                 {
-
+                    ClientScript.RegisterStartupScript(this.GetType(), "Alerta", "alert('Repartidor Registrado');", true);
                 }
+
+                Response.Redirect("~/ListaRepartidores.aspx");
             }
             else
             {

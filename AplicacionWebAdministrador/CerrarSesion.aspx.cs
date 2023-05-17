@@ -13,7 +13,7 @@ namespace AplicacionWebAdministrador
         {
             if (Session["nombreUsuario"] == null || Session["contraseña"] == null)
             {
-                Response.Redirect("~/InicioSesión.aspx");
+                Response.Redirect("~/Index.aspx");
             }
         }
 
@@ -21,7 +21,9 @@ namespace AplicacionWebAdministrador
         protected void Cerrar_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("~/InicioSesión.aspx");
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.AppendCacheExtension("no-store, must-revalidate");
+            Response.Redirect("~/Index.aspx");
         }
 
         protected void Redirigir_Click(object sender, EventArgs e)

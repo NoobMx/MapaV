@@ -13,17 +13,20 @@ namespace AplicacionWebAdministrador
     public partial class WebForm6 : System.Web.UI.Page
     {
         public static int RepartidorID;
+        public static string RepartidorEstatus;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["nombreUsuario"] == null || Session["contraseña"] == null)
             {
-                Response.Redirect("~/InicioSesión.aspx");
+                Response.Redirect("~/Index.aspx");
             }
             else
             {
                 if (!string.IsNullOrEmpty(Request.Form["repartidor"]))
                 {
                     RepartidorID = int.Parse(Request.Form["repartidor"]);
+                    RepartidorEstatus = Request.Form["repartidorestatus"];
+
                     Repartidor repartidorO = new Repartidor();
                     String huevos = repartidorO.MostrarRepartidor();
                     var listarepartidores = JsonConvert.DeserializeObject<List<Repartidor>>(repartidorO.MostrarRepartidor());
@@ -60,11 +63,18 @@ namespace AplicacionWebAdministrador
         {
             Repartidor repartidor = new Repartidor();
             int? repartidorID = RepartidorID;
-
-            if (repartidorID.HasValue && repartidor.DesactivarRepartidor(repartidorID.Value))
+            if (RepartidorEstatus == "Activo" && repartidorID.HasValue && repartidor.DesactivarRepartidor(repartidorID.Value))
             {
                 //Alerta
             }
+            else
+            {
+                if (RepartidorEstatus == "Inactivo" && repartidorID.HasValue && repartidor.ActivarRepartidor(repartidorID.Value))
+                {
+                    //Alerta
+                }
+            }
+            Response.Redirect("~/ListaRepartidores.aspx");
         }
 
     }

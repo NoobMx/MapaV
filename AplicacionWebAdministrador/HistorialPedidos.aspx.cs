@@ -14,7 +14,7 @@ namespace AplicacionWebAdministrador
         {
             if (Session["nombreUsuario"] == null || Session["contraseña"] == null)
             {
-                Response.Redirect("~/InicioSesión.aspx");
+                Response.Redirect("~/Index.aspx");
             }
 
         }
@@ -62,6 +62,13 @@ namespace AplicacionWebAdministrador
                 tblPedidosEntregados.HeaderRow.Cells[7].Text = "Horario";
             }
 
+            double total = 0;
+            foreach (PedidoProductoDTO producto in pedidoProductos)
+            {
+                total += producto.PrecioTotal;
+            }
+
+            lblTotal.Text = total.ToString("0.00");
         }
     }
 }

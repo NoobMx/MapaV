@@ -11,7 +11,7 @@ namespace AplicacionWebAdministrador.Models
 {
     public class Horario
     {
-        PeticionHTTP peticion = new PeticionHTTP("https://ecommerce.administracion-op.com");
+        PeticionHTTP peticion = new PeticionHTTP("https://tienda.maiysal.com");
         public int ID { get; set; }
         public string Nombre { get; set; }
         public bool Estatus { get; set; }

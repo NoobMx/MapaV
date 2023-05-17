@@ -14,7 +14,7 @@ namespace AplicacionWebAdministrador.Controllers
 {
     public class PedidosController : ApiController
     {
-        PeticionHTTP request = new PeticionHTTP("https://ecommerce.administracion-op.com/");
+        PeticionHTTP request = new PeticionHTTP("https://tienda.maiysal.com");
         [HttpGet]
         public List<Pedido> MostrarPedido()
         {

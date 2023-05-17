@@ -8,7 +8,7 @@ namespace AplicacionWebAdministrador.Models
 {
     public class Administrador
     {
-        PeticionHTTP peticion = new PeticionHTTP("https://ecommerce.administracion-op.com");
+        PeticionHTTP peticion = new PeticionHTTP("https://tienda.maiysal.com");
         public int ID { get; set; }
         public string NombreUsuario { get; set; }
         public string Nombre { get; set; }

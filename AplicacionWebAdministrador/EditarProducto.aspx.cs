@@ -14,18 +14,20 @@ namespace AplicacionWebAdministrador
     public partial class WebForm2 : System.Web.UI.Page
     {
         public static int ProductoID;
+        public static bool ProductoEstatus;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["nombreUsuario"] == null || Session["contraseña"] == null)
             {
-                Response.Redirect("~/InicioSesión.aspx");
+                Response.Redirect("~/Index.aspx");
             }
             else {
                 if (!string.IsNullOrEmpty(Request.Form["producto"]))
                 {
                     ProductoID = int.Parse(Request.Form["producto"]);
+                    ProductoEstatus = Boolean.TryParse(Request.Form["productoestatus"], out ProductoEstatus);
                     Producto productoO = new Producto();
-                    var listaproductos = JsonConvert.DeserializeObject<List<Producto>>(productoO.MostrarProductos());
+                    var listaproductos = JsonConvert.DeserializeObject<List<Producto>>(productoO.MostrarProductosActivos());
                     ObservableCollection<ProductosDTO> productosDTO = new ObservableCollection<ProductosDTO>();
                     listaproductos.ForEach(p =>
                     {
@@ -53,24 +55,33 @@ namespace AplicacionWebAdministrador
         }
         protected void Actualizar_Click(object sender, EventArgs e)
         {
-            Producto producto = new Producto();
-            double stock = double.Parse(Txt_stock.Text);
-            Producto productoStock = new Producto()
+            double stock;
+            if (double.TryParse(Txt_stock.Text, out stock) && stock >= 0)
             {
-                ID = ProductoID,
-                Stock = stock
-            };
-            if (producto.ActualizarStock(productoStock))
+                Producto producto = new Producto();
+                Producto productoStock = new Producto()
+                {
+                    ID = ProductoID,
+                    Stock = stock
+                };
+                if (producto.ActualizarStock(productoStock))
+                {
+                    //Alerta
+                }
+                Response.Redirect("~/Productos.aspx");
+            }
+            else
             {
                 //Alerta
+                Response.Redirect("~/Productos.aspx");
             }
-            Response.Redirect("~/Productos.aspx");
         }
         protected void Desactivar(object sender, EventArgs e)
         {
             Producto producto = new Producto();
             int? productoID = ProductoID;
-            bool resp = producto.DesactivarProducto(productoID.Value);
+            bool productoEstatus = ProductoEstatus;
+            bool resp = producto.CambiarEstatusProducto(productoID.Value, productoEstatus);
 
             if (productoID.HasValue && resp)
             {

@@ -18,29 +18,42 @@ namespace AplicacionWebAdministrador
         {
             if (Session["nombreUsuario"] == null || Session["contraseña"] == null)
             {
-                Response.Redirect("~/InicioSesión.aspx");
+                Response.Redirect("~/Index.aspx");
             }
             else
             {
                 Producto productoO = new Producto();
-                var listaproductos = JsonConvert.DeserializeObject<List<Producto>>(productoO.MostrarProductos());
+                var listaproductos = JsonConvert.DeserializeObject<List<Producto>>(productoO.MostrarProductosActivos());
                 ObservableCollection<ProductosDTO> productosDTO = new ObservableCollection<ProductosDTO>();
                 listaproductos.ForEach(p =>
                 {
-                    if (p.Estatus == true)
-                    {
                         productosDTO.Add(new ProductosDTO
                         {
                             ID = p.ID,
                             Nombre = p.Nombre,
-                            Estatus = true,
+                            Estatus = p.Estatus,
                             Foto = p.Foto
                         });
-                    }
                 });
                 NumeroProductos.Text = productosDTO.Count.ToString();
                 rptProductos.DataSource = productosDTO;
                 rptProductos.DataBind();
+
+                Producto productoOI = new Producto();
+                var listaproductosI = JsonConvert.DeserializeObject<List<Producto>>(productoOI.MostrarProductosInactivos());
+                ObservableCollection<ProductosDTO> productosDTOI = new ObservableCollection<ProductosDTO>();
+                listaproductosI.ForEach(p =>
+                {
+                    productosDTOI.Add(new ProductosDTO
+                    {
+                        ID = p.ID,
+                        Nombre = p.Nombre,
+                        Estatus = p.Estatus,
+                        Foto = p.Foto
+                    });
+                });
+                rpt_ProductosDesactivados.DataSource = productosDTOI;
+                rpt_ProductosDesactivados.DataBind();
             }
         }
 
