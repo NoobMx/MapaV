@@ -23,7 +23,8 @@ namespace AplicacionWebAdministrador
             else
             {
                 Cliente clienteO = new Cliente();
-                var listaclientes = JsonConvert.DeserializeObject<List<Cliente>>(clienteO.MostrarClientes());
+                var Clientes = clienteO.MostrarClientes();
+                var listaclientes = JsonConvert.DeserializeObject<List<Cliente>>(Clientes);
                 ObservableCollection<ClientesDTO> clientesDTO = new ObservableCollection<ClientesDTO>();
                 listaclientes.ForEach(p =>
                 {
@@ -39,6 +40,10 @@ namespace AplicacionWebAdministrador
                     }
                     if (p.Estatus == true)
                     {
+                        if (p.Calificacion == null)
+                        {
+                            p.Calificacion = 0;
+                        }
                         clientesDTO.Add(new ClientesDTO
                         {
                             ID = p.ID,

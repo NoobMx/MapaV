@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHvurKpkmk7qWjNtAt8MAW-En9ezyYoaM&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-lMWBn1AxyjkF9G6ljsD2J07wpYlVWSk&libraries=places&callback=initMap">
     </script>
 
     <script src="../Dom/mapaComp.js"></script>

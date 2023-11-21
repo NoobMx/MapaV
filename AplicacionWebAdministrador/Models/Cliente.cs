@@ -18,7 +18,7 @@ namespace AplicacionWebAdministrador.Models
         public bool Estatus { get; set; }
         public double Latitud { get; set; }
         public double Longitud { get; set; }
-        public int Calificacion { get; set; }
+        public int? Calificacion { get; set; }
         public DateTime DiaPedido { get; set; }
 
         public String MostrarClientes()
@@ -44,7 +44,7 @@ namespace AplicacionWebAdministrador.Models
         public string Estatus { get; set; }
         public double Latitud { get; set; }
         public double Longitud { get; set; }
-        public int Calificacion { get; set; }
+        public int? Calificacion { get; set; }
         public string DiaPedido { get; set; }
     }
 }

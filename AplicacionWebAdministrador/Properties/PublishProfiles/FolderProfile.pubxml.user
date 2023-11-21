@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\EQUIPO-21\Downloads\Nueva carpeta\AplicacionWebAdministrador\AplicacionWebAdministrador\bin\app.publish\</_PublishTargetUrl>
-    <History>True|2023-05-11T22:35:41.6616450Z;True|2023-05-11T16:34:51.1197248-06:00;True|2023-04-19T17:07:49.1552855-06:00;True|2023-04-18T09:40:01.4521186-06:00;True|2023-04-17T19:44:58.7138108-06:00;True|2023-04-17T19:12:01.9155409-06:00;True|2023-04-17T19:11:40.8188255-06:00;True|2023-04-12T19:51:09.6938415-06:00;</History>
+    <History>True|2023-09-06T20:11:07.4461054Z;True|2023-09-06T14:10:57.8209077-06:00;True|2023-05-11T16:35:41.6616450-06:00;True|2023-05-11T16:34:51.1197248-06:00;True|2023-04-19T17:07:49.1552855-06:00;True|2023-04-18T09:40:01.4521186-06:00;True|2023-04-17T19:44:58.7138108-06:00;True|2023-04-17T19:12:01.9155409-06:00;True|2023-04-17T19:11:40.8188255-06:00;True|2023-04-12T19:51:09.6938415-06:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -28,10 +28,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/04/2023 15:42:30</publishTime>
     </File>
     <File Include="bin/AplicacionWebAdministrador.dll">
-      <publishTime>05/11/2023 16:35:41</publishTime>
+      <publishTime>09/06/2023 14:11:06</publishTime>
     </File>
     <File Include="bin/AplicacionWebAdministrador.pdb">
-      <publishTime>05/11/2023 16:35:41</publishTime>
+      <publishTime>09/06/2023 14:11:06</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>04/16/2020 15:38:42</publishTime>
@@ -265,7 +265,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/23/2023 10:44:08</publishTime>
     </File>
     <File Include="HistorialPedidos.aspx">
-      <publishTime>05/11/2023 09:53:09</publishTime>
+      <publishTime>09/06/2023 13:01:39</publishTime>
     </File>
     <File Include="images/carrito-de-compras.png">
       <publishTime>04/17/2023 13:40:30</publishTime>
@@ -307,7 +307,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/21/2023 17:13:06</publishTime>
     </File>
     <File Include="PedidosMapas.aspx">
-      <publishTime>05/11/2023 11:00:42</publishTime>
+      <publishTime>09/06/2023 13:00:32</publishTime>
     </File>
     <File Include="Productos.aspx">
       <publishTime>05/03/2023 15:38:05</publishTime>
