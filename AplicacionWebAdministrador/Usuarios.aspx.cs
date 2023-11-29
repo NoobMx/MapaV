@@ -50,7 +50,7 @@ namespace AplicacionWebAdministrador
                             Nombre = p.Nombre,
                             Estatus = s,
                             Calificacion = p.Calificacion,
-                            DiaPedido = p.DiaPedido.ToString("dd/MM/yyyy")
+                            DiaPedido = p.DiaPedido.ToString()
                         });
                     }
                 });

@@ -21,7 +21,7 @@ namespace AplicacionWebAdministrador.Models
         public bool Estatus { get; set; }
 
         public byte[] Foto { get; set; }
-        public int Calificacion { get; set; }
+        public int? Calificacion { get; set; }
 
 
         public bool RegistrarRepartidor(Repartidor repartidor)
@@ -69,6 +69,6 @@ namespace AplicacionWebAdministrador.Models
         public long NumeroTelefono { get; set; }
         public string Estatus { get; set; }
         public byte[] Foto { get; set; }
-        public int Calificacion { get; set; }
+        public int? Calificacion { get; set; }
     }
 }

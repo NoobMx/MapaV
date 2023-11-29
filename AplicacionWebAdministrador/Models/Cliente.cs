@@ -19,7 +19,7 @@ namespace AplicacionWebAdministrador.Models
         public double Latitud { get; set; }
         public double Longitud { get; set; }
         public int? Calificacion { get; set; }
-        public DateTime DiaPedido { get; set; }
+        public DateTime? DiaPedido { get; set; }
 
         public String MostrarClientes()
         {
